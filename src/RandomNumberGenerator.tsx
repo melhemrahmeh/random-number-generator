@@ -32,18 +32,56 @@ const RandomNumberGenerator = () => {
         darkMode ? "bg-gray-900 text-gray-100" : "bg-gray-100 text-gray-900"
       }`}
     >
-      <div className="absolute top-4 right-4">
-        <button
-          onClick={toggleDarkMode}
-          className={`px-4 py-2 rounded-md text-sm font-medium transition ${
-            darkMode
-              ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
-              : "bg-gray-200 text-gray-800 hover:bg-gray-300"
-          }`}
+<div className="absolute top-4 right-4">
+  <button
+    onClick={toggleDarkMode}
+    className={`px-4 py-2 rounded-md text-sm font-medium flex items-center gap-2 transition ${
+      darkMode
+        ? "bg-gray-800 text-gray-200 hover:bg-gray-700"
+        : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+    }`}
+  >
+    {darkMode ? (
+      <>
+        {/* Sun Icon */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
         >
-          {darkMode ? "Light Mode" : "Dark Mode"}
-        </button>
-      </div>
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M12 3v2m0 14v2m9-9h-2M5 12H3m16.364 7.364l-1.414-1.414M6.343 6.343L4.929 4.929m12.728 12.728l1.414-1.414M6.343 17.657l-1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z"
+          />
+        </svg>
+        Light Mode
+      </>
+    ) : (
+      <>
+        {/* Moon Icon */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+          />
+        </svg>
+        Dark Mode
+      </>
+    )}
+  </button>
+</div>
 
       <div
         className={`p-8 rounded-lg shadow-lg w-11/12 max-w-md ${
